@@ -4,6 +4,27 @@ import "./cartSection.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { removeItem, updateQuantity } from "../actions";
 
+const CartItem = ({ title, id, quantity }) => {
+  const dispatch = useDispatch();
+  return (
+    <div className="single_title">
+      <div className="title">
+        <div className="item_name">{title}</div>
+        <button onClick={() => dispatch(removeItem(id))}>
+          <AiOutlineClose />
+        </button>
+      </div>
+      <div className="quantity">
+        <p>Quantity: </p>
+        <input
+          value={quantity}
+          onChange={(e) => dispatch(updateQuantity(id, e.target.value))}
+        />
+      </div>
+    </div>
+  );
+};
+
 const CartList = () => {
   const cartItems = useSelector((state) => Object.values(state));
   const totalAmount =
@@ -26,27 +47,6 @@ const CartList = () => {
       <div className="totalAmount">
         <h3>Total: ${totalAmount}</h3>
         <button className="purchase_button">Purchase</button>
-      </div>
-    </div>
-  );
-};
-
-const CartItem = ({ title, id, quantity }) => {
-  const dispatch = useDispatch();
-  return (
-    <div className="single_title">
-      <div className="title">
-        <div className="item_name">{title}</div>
-        <button onClick={() => dispatch(removeItem(id))}>
-          <AiOutlineClose />
-        </button>
-      </div>
-      <div className="quantity">
-        <p>Quantity: </p>
-        <input
-          value={quantity}
-          onChange={(e) => dispatch(updateQuantity(id, e.target.value))}
-        />
       </div>
     </div>
   );
