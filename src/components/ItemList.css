@@ -1,0 +1,30 @@
+.items_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-gap: 20px;
+}
+.add_button {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  background: #c89666;
+  color: white;
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.item_outter {
+  padding: 16px;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+}
+.item_title {
+  font-size: large;
+  font-weight: 600;
+  padding: 10px;
+}

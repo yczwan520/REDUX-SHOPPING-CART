@@ -1,0 +1,20 @@
+.App {
+  position: relative;
+  display: flex;
+}
+.item_list {
+  flex-basis: 70%;
+}
+.header {
+  padding: 10px 64px;
+}
+.item_detail {
+  padding: 16px 64px;
+}
+.cart {
+  flex-basis: 30%;
+  max-width: 400px;
+  min-width: 300px;
+  border-left: 3px dashed #12343b;
+  padding-left: 10px;
+}
